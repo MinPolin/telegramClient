@@ -4,6 +4,8 @@ import time
 import os
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
+from telethon import functions,types
+
 
 from dotenv import load_dotenv
 
@@ -38,7 +40,8 @@ def get_client():
 
 client = get_client()
 
-
+async def create_chat(username,title):
+    await client(functions.messages.CreateChatRequest(username, title=title))
 
 async def send_msg(username):
     # Now you can use all client methods listed below, like for example...
@@ -46,19 +49,24 @@ async def send_msg(username):
 
 
 def main():
-
+    keyy=''
     print('start')
-    for i in range(5):
+    # while keyy!="q":
+    for i in range(15):
 
         time.sleep(TIME_SLEEP)
 
         data=get_data(URL)
         print(data['flag'])
         if data['flag']:
+            print(data['chat'])
+            username=list(data['chat']['0']['part'].split(','))
+            title=data['chat']['0']['name']
             with client:
-                client.loop.run_until_complete(send_msg(Polina))
+                client.loop.run_until_complete(create_chat(username,title))
         else:
             print('Waiting to the next command')
+        # keyy=input('keyy =\n')
 
 
 if __name__ == "__main__":
