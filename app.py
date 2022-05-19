@@ -71,3 +71,6 @@ def main():
             print('Waiting to the next command')
         # keyy=input('keyy =\n')
 
+@app.route('/hello')
+def hello():
+    return 'Hello World!'
