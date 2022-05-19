@@ -5,12 +5,15 @@ import os
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
 from telethon import functions,types
-
-
+import flask
 from dotenv import load_dotenv
+app = flask.Flask(__name__)
+
+
 
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+
 if os.path.exists(dotenv_path):
     load_dotenv(dotenv_path)
 
@@ -47,7 +50,7 @@ async def send_msg(username):
     # Now you can use all client methods listed below, like for example...
     await client.send_message(username, 'I will create a chat instead of this msg')
 
-
+@app.route("/")
 def main():
     keyy=''
     print('start')
@@ -68,6 +71,3 @@ def main():
             print('Waiting to the next command')
         # keyy=input('keyy =\n')
 
-
-if __name__ == "__main__":
-    main()
