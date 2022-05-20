@@ -23,7 +23,7 @@ SESSION_STRING = os.environ.get('SESSION_STRING')
 
 TIME_SLEEP=10
 
-URL="http://127.0.0.1:8000/tg/"
+URL="https://broadcast-management-test.herokuapp.com/tg/"
 Polina='MinPolin'
 Vlad='whatislove_sakharov'
 
