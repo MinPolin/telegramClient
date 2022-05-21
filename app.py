@@ -6,6 +6,8 @@ from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
 from telethon import functions,types
 import flask
+from flask import request
+
 from dotenv import load_dotenv
 app = flask.Flask(__name__)
 
@@ -51,26 +53,41 @@ async def send_msg(username):
     await client.send_message(username, 'I will create a chat instead of this msg')
 
 @app.route("/")
-def main():
-    keyy=''
+def main(req):
+
+    print('start')
+    # req
+    # print(data['flag'])
+    # if data['flag']:
+    #     print(data['chat'])
+    #     username=list(data['chat']['0']['part'].split(','))
+    #     title=data['chat']['0']['name']
+    #     with client:
+    #         client.loop.run_until_complete(create_chat(username,title))
+    # else:
+    #     print('Waiting to the next command')
+    # # keyy=input('keyy =\n')
+    return request.data
+
+
+@app.route('/hello')
+def hello():
+    keyy = ''
     print('start')
     # while keyy!="q":
     for i in range(15):
 
         time.sleep(TIME_SLEEP)
 
-        data=get_data(URL)
+        data = get_data(URL)
         print(data['flag'])
         if data['flag']:
             print(data['chat'])
-            username=list(data['chat']['0']['part'].split(','))
-            title=data['chat']['0']['name']
+            username = list(data['chat']['0']['part'].split(','))
+            title = data['chat']['0']['name']
             with client:
-                client.loop.run_until_complete(create_chat(username,title))
+                client.loop.run_until_complete(create_chat(username, title))
         else:
             print('Waiting to the next command')
         # keyy=input('keyy =\n')
-
-@app.route('/hello')
-def hello():
-    return 'Hello World!'
+    return 'OK'
