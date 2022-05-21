@@ -67,7 +67,7 @@ def main():
     # else:
     #     print('Waiting to the next command')
     # # keyy=input('keyy =\n')
-    return {'k':'v'}
+    return {'data':'v'}
 
 
 @app.route('/hello')
