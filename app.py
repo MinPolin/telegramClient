@@ -55,7 +55,7 @@ async def send_msg(username):
 @app.route("/")
 def main():
 
-    print('request.args')
+    print(request.args)
     # req
     # print(data['flag'])
     # if data['flag']:
