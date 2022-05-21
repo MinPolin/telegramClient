@@ -7,7 +7,7 @@ from telethon.sessions import StringSession
 from telethon import functions,types
 import flask
 from flask import request
-
+import asyncio
 from dotenv import load_dotenv
 app = flask.Flask(__name__)
 
@@ -35,14 +35,17 @@ def get_data(url):
     data = json.loads(content)
 
     return data
-
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
 
 def get_client():
+
     api_hash = API_HASH
     api_id = API_ID
     name = 'admin'
-    return TelegramClient(StringSession(SESSION_STRING), api_id, api_hash)
-
+    client=TelegramClient(StringSession(SESSION_STRING), api_id, api_hash,loop=loop)
+    client.start()
+    return client
 client = get_client()
 
 async def create_chat(username,title):
@@ -54,8 +57,21 @@ async def send_msg(username):
 
 @app.route("/", methods=['GET', 'POST'])
 def main():
-    print('smth')
-    print(request)
+    print('smth3')
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        json = request.json
+        print(json['name'], json['parts'])
+        username = list(json['parts'].split(','))
+        print(username)
+        title=json['name']
+        loop.run_until_complete(create_chat(username,title))
+
+
+    else:
+        print(content_type)
+
+
     # req
     # print(data['flag'])
     # if data['flag']:
