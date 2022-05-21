@@ -55,7 +55,7 @@ async def send_msg(username):
 @app.route("/")
 def main():
 
-    print('start')
+    print('request.args')
     # req
     # print(data['flag'])
     # if data['flag']:
@@ -67,7 +67,7 @@ def main():
     # else:
     #     print('Waiting to the next command')
     # # keyy=input('keyy =\n')
-    return request.args
+    return {'k':'v'}
 
 
 @app.route('/hello')
