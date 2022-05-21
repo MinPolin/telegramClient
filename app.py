@@ -53,7 +53,7 @@ async def send_msg(username):
     await client.send_message(username, 'I will create a chat instead of this msg')
 
 @app.route("/")
-def main(req):
+def main():
 
     print('start')
     # req
