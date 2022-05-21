@@ -52,10 +52,10 @@ async def send_msg(username):
     # Now you can use all client methods listed below, like for example...
     await client.send_message(username, 'I will create a chat instead of this msg')
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def main():
-
-    print(request.args)
+    print('smth')
+    print(request)
     # req
     # print(data['flag'])
     # if data['flag']:
