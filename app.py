@@ -29,17 +29,12 @@ SESSION_STRING = os.environ.get('SESSION_STRING')
 
 TIME_SLEEP=10
 
-URL="https://broadcast-management-test.herokuapp.com/tg/"
-# URL="http://127.0.0.1:5000/tg/"
+
+URL="http://127.0.0.1:5000/tg/"
 Polina='MinPolin'
 Vlad='whatislove_sakharov'
 # 588513947
-
-
-
-
-
-
+a=8
 
 def get_data(url):
     response = requests.get(url)
@@ -59,7 +54,7 @@ def get_client():
     client.start()
     return client
 
-@events.register(events.NewMessage(pattern='(?i)hello.+'))
+@events.register(events.NewMessage())
 async def handler(event):
     # Respond whenever someone says "Hello" and something else
     await event.reply('Hey!')
@@ -139,7 +134,12 @@ def new_user():
         print(json['msg'], json['chat'])
         chat = int(json['chat'])
         msg = str(json['msg'])
+        user = json['username']
+        user = Polina
+        user_msg = json['user_msg']
         loop.run_until_complete(send_msg(chat,msg))
+
+        loop.run_until_complete(send_msg(user,user_msg))
 
 
     else:
@@ -155,7 +155,7 @@ def simple_send():
         print(json['msg'], json['user'])
 
         user = json['user']
-        # user = Polina
+        user = Polina
         msg = str(json['msg'])
         loop.run_until_complete(send_msg(user, msg))
 
