@@ -4,7 +4,7 @@ import time
 import os
 from telethon import events
 
-
+from telethon.events import NewMessage, UserUpdate, MessageDeleted, MessageEdited, ChatAction
 from telethon.tl.custom import Button
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
@@ -44,22 +44,23 @@ def get_data(url):
     return data
 loop = asyncio.new_event_loop()
 asyncio.set_event_loop(loop)
+async def new_message_handler(event):
+    # record the mapping of message ID and its chat
+    print('aaa')
+    await client.send_message(Polina, 'msg', parse_mode="html")
 
 def get_client():
 
     api_hash = API_HASH
     api_id = API_ID
     name = 'admin'
-    client=TelegramClient(StringSession(SESSION_STRING), api_id, api_hash,loop=loop)
+    client=TelegramClient(StringSession(SESSION_STRING), api_id, api_hash,loop=loop,sequential_updates=False)
+
     client.start()
     return client
 
-@events.register(events.NewMessage())
-async def handler(event):
-    # Respond whenever someone says "Hello" and something else
-    await event.reply('Hey!')
+
 client = get_client()
-client.add_event_handler(handler)
 
 
 async def create_chat(username,title):
@@ -135,7 +136,7 @@ def new_user():
         chat = int(json['chat'])
         msg = str(json['msg'])
         user = json['username']
-        user = Polina
+        # user = Polina
         user_msg = json['user_msg']
         loop.run_until_complete(send_msg(chat,msg))
 
@@ -153,9 +154,8 @@ def simple_send():
     if (content_type == 'application/json'):
         json = request.json
         print(json['msg'], json['user'])
-
         user = json['user']
-        user = Polina
+        # user = Polina
         msg = str(json['msg'])
         loop.run_until_complete(send_msg(user, msg))
 
@@ -163,3 +163,6 @@ def simple_send():
         print(content_type)
 
     return {'data': 'v'}
+
+
+
