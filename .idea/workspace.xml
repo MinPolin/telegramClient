@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70a8f55f-3e15-45e3-a7f4-a32bc3b78ae9" name="Changes" comment="first commit">
+    <list default="true" id="70a8f55f-3e15-45e3-a7f4-a32bc3b78ae9" name="Changes" comment="remove me">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
@@ -131,7 +131,11 @@
       <workItem from="1668961581280" duration="307000" />
       <workItem from="1668961902395" duration="109000" />
       <workItem from="1668968650956" duration="12000" />
-      <workItem from="1669022721740" duration="3250000" />
+      <workItem from="1669022721740" duration="8103000" />
+      <workItem from="1669281730126" duration="1192000" />
+      <workItem from="1669642302220" duration="408000" />
+      <workItem from="1673347863715" duration="662000" />
+      <workItem from="1674750059535" duration="756000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1650632468186</created>
@@ -196,7 +200,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668866796811</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="first commit">
+      <created>1669026465466</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669026465466</updated>
+    </task>
+    <task id="LOCAL-00011" summary="remove me">
+      <created>1669280299527</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669280299527</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,13 +233,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="remove me" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove me" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/telegramClient$test.coverage" NAME="test Coverage Results" MODIFIED="1652022683483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/telegramClient$main.coverage" NAME="main Coverage Results" MODIFIED="1650626475019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/telegramClient$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1668703313204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/telegramClient$Flask__app_py_app_.coverage" NAME="Flask (app.py:app) Coverage Results" MODIFIED="1669024866939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/telegramClient$Flask__app_py_app_.coverage" NAME="Flask (app.py:app) Coverage Results" MODIFIED="1669029892712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/telegramClient$config.coverage" NAME="config Coverage Results" MODIFIED="1650627115767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/telegramClient$app.coverage" NAME="app Coverage Results" MODIFIED="1669024483003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

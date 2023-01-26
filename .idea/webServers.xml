@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c4a9a8cb-08eb-43fe-939c-18e349f7ca88" name="botbrod" url="http://ya.ru">
+        <fileTransfer rootFolder="/root/projects/tgclient/src" accessType="SFTP" host="5.45.85.143" port="22" sshConfigId="a9a2461b-80e1-4970-9d15-59b64d433316" sshConfig="root@5.45.85.143:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

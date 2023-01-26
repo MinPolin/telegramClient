@@ -44,10 +44,7 @@ def get_data(url):
     return data
 loop = asyncio.new_event_loop()
 asyncio.set_event_loop(loop)
-async def new_message_handler(event):
-    # record the mapping of message ID and its chat
-    print('aaa')
-    await client.send_message(Polina, 'msg', parse_mode="html")
+
 
 def get_client():
 
@@ -68,6 +65,13 @@ async def create_chat(username,title):
     result = await client(functions.messages.CreateChatRequest(username, title=title))
     print(result.__dict__["chats"][0].__dict__["id"])
 
+
+async def rename_bot():
+    result = await client(functions.account.UpdateProfileRequest(
+        first_name='some string here',
+        last_name='2'
+    ))
+    print(result.stringify())
 
 async def get_all_dialogs():
     async for dialog in client.iter_dialogs():
@@ -141,6 +145,7 @@ def new_user():
         loop.run_until_complete(send_msg(chat,msg))
 
         loop.run_until_complete(send_msg(user,user_msg))
+        loop.run_until_complete(rename_bot())
 
 
     else:
